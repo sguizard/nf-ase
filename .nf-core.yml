@@ -1,0 +1,60 @@
+bump_version: null
+lint:
+  files_exist:
+  - conf/igenomes.config
+  - conf/igenomes_ignored.config
+  - assets/multiqc_config.yml
+  - LICENSE
+  - conf/igenomes.config
+  - conf/igenomes_ignored.config
+  - assets/multiqc_config.yml
+  - LICENSE
+  - CODE_OF_CONDUCT.md
+  - assets/nf-core-ase_logo_light.png
+  - docs/images/nf-core-ase_logo_light.png
+  - docs/images/nf-core-ase_logo_dark.png
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/workflows/awstest.yml
+  - .github/workflows/awsfulltest.yml
+  files_unchanged:
+  - .github/CONTRIBUTING.md
+  - .github/CONTRIBUTING.md
+  - assets/sendmail_template.txt
+  - LICENSE
+  - .github/CONTRIBUTING.md
+  - .github/CONTRIBUTING.md
+  - assets/sendmail_template.txt
+  - LICENSE
+  - CODE_OF_CONDUCT.md
+  - assets/nf-core-ase_logo_light.png
+  - docs/images/nf-core-ase_logo_light.png
+  - docs/images/nf-core-ase_logo_dark.png
+  - .github/ISSUE_TEMPLATE/bug_report.yml
+  multiqc_config: false
+  nextflow_config:
+  - manifest.name
+  - manifest.homePage
+  - validation.help.beforeText
+  - validation.help.afterText
+  - validation.summary.beforeText
+  - validation.summary.afterText
+nf_core_version: 3.0.2
+org_path: null
+repository_type: pipeline
+template:
+  author: sguiwqrd
+  description: 'Allele Specific Expression pipeline using STAR, WASP and GeneiASE. '
+  force: true
+  is_nfcore: false
+  name: ASE
+  org: nf
+  outdir: .
+  skip_features:
+  - igenomes
+  - gitpod
+  - codespaces
+  - multiqc
+  - fastqc
+  - license
+  version: 1.0.0dev
+update: null
