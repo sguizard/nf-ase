@@ -24,10 +24,12 @@ workflow ASE {
     ch_samplesheet // channel: samplesheet read in from --input
     main:
 
+    ch_star = ch_samplesheet.map {meta, read1, read2 -> [meta, [read1, read2]]}
+
     STAR_ALIGN(
-        ch_samplesheet,
-        [["id:dummy"], params.star_genome],
-        [["id:dummy"], params.star_gtf],
+        ch_star,
+        [["id:dummy"], file(params.star_genome)],
+        [["id:dummy"], file(params.star_gtf)],
         true,
         "illumina",
         "seqCenter"
