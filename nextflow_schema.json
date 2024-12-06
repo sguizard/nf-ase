@@ -20,9 +20,28 @@
                     "mimetype": "text/csv",
                     "pattern": "^\\S+\\.csv$",
                     "description": "Path to comma-separated file containing information about the samples in the experiment.",
-                    "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row.",
+                    "help_text": "The header line must be 'sample,fastq_1,fastq_2'. Each line list one sample and it's associated fastq files.",
                     "fa_icon": "fas fa-file-csv"
                 },
+                "star_genome": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "exists": true,
+                    "description": "STAR genome",
+                    "help_text": "The directory created by STAR --runMode genomeGenerate.",
+                    "fa_icon": "fas fa-folder-open"
+                },
+                "star_gtf": {
+                    "type": "string",
+                    "format": "file-path",
+                    "exists": true,
+                    "mimetype": "text/gtf",
+                    "pattern": "^\\S+\\.gtf$",
+                    "description": "Path to genome gtf file.",
+                    "help_text": "The annotation file must be in gtf format and have the .gtf extension.",
+                    "fa_icon": "fas fa-file"
+                },
+
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
@@ -156,7 +175,7 @@
         {
             "$ref": "#/$defs/input_output_options"
         },
-        
+
         {
             "$ref": "#/$defs/institutional_config_options"
         },

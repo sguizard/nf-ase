@@ -9,6 +9,8 @@ include { paramsSummaryMap       } from 'plugin/nf-schema'
 
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_ase_pipeline'
+include { STAR_ALIGN             } from '../modules/nf-core/star/align/main'
+
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,8 +24,16 @@ workflow ASE {
     ch_samplesheet // channel: samplesheet read in from --input
     main:
 
+    STAR_ALIGN(
+        ch_samplesheet,
+        [["id:dummy"], params.star_genome],
+        [["id:dummy"], params.star_gtf],
+        true,
+        "illumina",
+        "seqCenter"
+    )
+
     ch_versions = Channel.empty()
-    
 
     //
     // Collate and save software versions

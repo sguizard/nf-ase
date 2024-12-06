@@ -13,7 +13,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { ASE  } from './workflows/ase'
+include { ASE                     } from './workflows/ase'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_ase_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_ase_pipeline'
 /*
@@ -76,7 +76,7 @@ workflow {
         params.outdir,
         params.monochrome_logs,
         params.hook_url,
-        
+
     )
 }
 
